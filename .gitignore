@@ -1,0 +1,13 @@
+/nbproject
+/.idea
+/public_html/temporary/*.php
+/public_html/temporary/routes/*.php*
+/public_html/files/*
+/files/*
+/public_html/pics
+/public_html/temporary/*_not_found.html
+/node_modules
+mix-manifest.json
+package.version
+/reinit_stand.php
+/work_time.php

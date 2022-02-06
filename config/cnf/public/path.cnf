@@ -1,0 +1,25 @@
+;mirror
+originurl                                   = http://site.ru
+
+;url
+baseurl                                     = http://site.ru
+pushserver                                  = site.ru
+purl                                        = http://site.ru/pics
+purl_mirror 				                = http://site.ru/pics
+purl_mirror 				                = https://kwork.ru/pics
+imageurl                                    = http://site.ru/images
+membersprofilepicurl                        = http://site.ru/files/avatar
+adminurl                                    = http://site.ru/administrator
+uploadedurl                                 = http://site.ru/files/uploaded
+portfoliourl                                = http://site.ru/files/portfolio
+coverurl                                    = http://site.ru/files/cover
+widgeturl                                   = http://site.ru/js/kwork_widget.js
+files_miniature_url							= http://site.ru/files/miniature
+
+;dir
+basedir                                     = /var/www/site.ru/public_html
+imagedir                                    = /var/www/site.ru/public_html/images
+pdir                                        = /var/www/site.ru/public_html/pics
+membersprofilepicdir                        = /var/www/site.ru/public_html/files/avatar
+logDir                                      = /var/www/site.ru/logs
+configdir                                   = /var/www/site.ru/config
