@@ -1,0 +1,426 @@
+h1.manage-orders_title {
+  margin-top: 8px;
+  line-height: 44px;
+  margin-bottom: 5px;
+
+  @media all and (max-width: 800px) {
+    margin-bottom: 14px;
+  }
+}
+
+.manage-orders {
+  max-width: 681px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.order {
+  &-item {
+    background-color: white;
+    border: 1px solid #E7E7E7;
+    border-radius: 8px;
+    padding: 16px 0 21px;
+
+    @media all and (max-width: 800px) {
+      padding: 12px 0 24px;
+      border-radius: 0;
+      border: none;
+    }
+
+    & + .order-item {
+      margin-top: 16px;
+
+      @media all and (max-width: 800px) {
+        margin-top: 20px;
+      }
+    }
+
+    &_header {
+      margin-left: 24px;
+      display: flex;
+      justify-content: space-between;
+
+      @media all and (max-width: 800px) {
+        margin-left: 8px;
+        position: relative;
+      }
+    }
+
+    &_avatar {
+      width: 72px;
+    }
+
+    &_info {
+      display: flex;
+
+      &_user {
+        font-size: 11px;
+        line-height: 15px;
+        letter-spacing: .2px;
+
+        .dot-user-status {
+          width: 6px;
+          height: 6px;
+          margin-left: 4px;
+        }
+      }
+
+      &_btn {
+        line-height: 24px;
+        background: #d0d0c8;
+        padding: 0 16px;
+        border-radius: 12px;
+        display: inline-block;
+        color: white;
+        font-size: 10px;
+        letter-spacing: .2px;
+        cursor: pointer;
+        border: none;
+
+        @media all and (max-width: 800px) {
+          margin-top: 9px;
+        }
+
+        &_blue {
+          background: #78b3f1;
+
+          /* должно поступать с макетом от дизайнера */
+          &:hover {
+            background: #9bcfff;
+          }
+        }
+        /* доработать остальные цвета */
+      }
+    }
+
+    &_status {
+      display: inline-block;
+      border-radius: 12px 0 0 12px;
+      box-sizing: border-box;
+      padding-left: 12px;
+      padding-right: 23px;
+      position: relative;
+      cursor: pointer;
+      transition: .3s ease all;
+
+      @media all and (max-width: 800px) {
+        position: absolute;
+        top: -22px;
+        right: 0;
+        border: 1px solid white;
+        border-right: none;
+        border-radius: 2px;
+        padding-right: 16px;
+
+      }
+
+      &_red {
+        background: rgba(235, 87, 87, .1);
+        color: #EB5757;
+        display: flex;
+        align-items: center;
+
+        @media all and (max-width: 800px) {
+          background: #FDEEEE;
+        }
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url(/images/cross.svg) 0 0 no-repeat;
+        }
+      }
+
+      &_orange {
+        background: rgba(242, 201, 76, .15);
+        color: #CC933D;
+
+        @media all and (max-width: 800px) {
+          background: #FDF7E4;
+        }
+      }
+
+      &_green {
+        background: rgba(0, 153, 0, .15);
+        color: #009900;
+
+        @media all and (max-width: 800px) {
+          background: #D9F0D9;
+        }
+
+        &.-done {
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(/images/double-arrow.svg) 0 0 no-repeat;
+          }
+        }
+      }
+
+      &_gray {
+        background: rgba(189, 189, 189, .23);
+        color: #4F4F4F;
+
+        @media all and (max-width: 800px) {
+          background: #F0F0F0;
+        }
+      }
+    }
+
+    &_more {
+      display: block;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      background: url(/images/arrow_more.svg) rgba(231, 231, 231, .2) center center no-repeat;
+      border-radius: 16px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+      margin-right: 30px;
+      transition: .3s ease all;
+
+      @media all and (max-width: 800px) {
+        margin-right: 16px;
+      }
+
+      &:not(.-show) {
+        margin-top: -21px;
+
+        @media all and (max-width: 800px) {
+          margin-top: -16px;
+        }
+      }
+
+      &.-show {
+        margin-top: -17px;
+        background-image: url(/images/arrow_more2.svg);
+
+        @media all and (max-width: 800px) {
+          margin-top: -16px;
+        }
+      }
+
+      &:hover {
+        filter: brightness(85%);
+      }
+    }
+  }
+
+  &-steps {
+    margin-top: 27px;
+
+    @media all and (max-width: 800px) {
+      margin-top: 20px;
+    }
+
+    &:not(.-show) {
+      display: none;
+    }
+  }
+
+  &-step {
+    position: relative;
+    padding-bottom: 22px;
+    min-height: 82px;
+    display: flex;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 3px;
+      background-color: #C0C0C0;
+      top: 7px;
+      bottom: -7px;
+    }
+
+    &:last-child {
+      padding-bottom: 6px;
+      min-height: auto;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &_title {
+      box-sizing: border-box;
+      width: 120px;
+      padding-left: 14px;
+      color: #C0C0C0;
+      font-size: 10px;
+      line-height: 14px;
+
+      @media all and (max-width: 800px) {
+        width: 96px;
+      }
+    }
+
+    &_info {
+      position: relative;
+      max-width: 521px;
+      width: calc(100% - 120px);
+
+
+      @media all and (max-width: 800px) {
+        width: calc(100% - 96px);
+      }
+
+      &_text {
+        margin-top: 6px;
+
+        @media all and (max-width: 800px) {
+          margin-top: 4px;
+          padding-right: 8px;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 16px;
+
+          & + p {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+
+    &.-active,
+    &.-cancel {
+      &:not(.-last) {
+        &:before {
+          background-color: #009900;
+        }
+      }
+
+      .order-step {
+        &_title {
+          position: relative;
+
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            height: 1px;
+            left: 1px;
+            top: 7px;
+          }
+        }
+
+        &_info {
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 1.67px;
+            background-color: rgba(0, 0, 0, .4);
+            left: -24px;
+            top: 10px;
+          }
+        }
+      }
+    }
+
+    &.-active {
+      .order-step {
+        &_title {
+          color: #009900;
+
+          &:before {
+            background-color: #009900;
+          }
+        }
+      }
+    }
+
+    &.-cancel {
+      .order-step {
+        &_title {
+          color: #EB5757;
+
+          &:before {
+            background-color: #EB5757;
+          }
+        }
+      }
+    }
+
+    &_btns {
+      display: flex;
+      margin-top: 11px;
+
+      @media all and (max-width: 800px) {
+        display: block;
+      }
+    }
+
+    &_btn {
+      display: block;
+      padding: 0 32px;
+      line-height: 34px;
+      font-size: 11.25px;
+      border-radius: 17px;
+      border: 1px solid #009900;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      @media all and (max-width: 800px) {
+        width: 190px;
+        padding: 0;
+      }
+
+      & + .order-step_btn {
+        margin-left: 10px;
+
+        @media all and (max-width: 800px) {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+
+      &_green {
+        color: white;
+        background-color: #009900;
+
+        &:hover {
+          border-color: #07ac07;
+          background-color: #07ac07;
+        }
+      }
+
+      &_transparent {
+        color: #009900;
+        background-color: white;
+
+        &:hover {
+          background-color: rgba(0, 153, 0, 0.15);
+        }
+      }
+
+      &.order-get-btn,
+      &.order-send-btn {
+        width: 190px;
+        margin-top: 11px;
+        position: relative;
+        z-index: 10;
+      }
+
+      &.order-get-btn {
+        margin-bottom: -58px;
+      }
+
+      &.order-send-btn {
+        margin-bottom: -10px;
+      }
+    }
+  }
+}
